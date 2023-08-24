@@ -1,7 +1,7 @@
-if SHIELD_XBOWSW
+if SHIELD_ALIXW
 
 config ZMK_KEYBOARD_NAME
-    default "xbowsw"
+    default "alixw"
 
 endif
 
