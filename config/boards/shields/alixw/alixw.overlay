@@ -2,7 +2,7 @@
 
 / {
     chosen {
-        zephyr,display = &oled;
+        zephyr,display = &nice_view;
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
     };
@@ -30,6 +30,18 @@
             RC(1,0) RC(1,1) RC(1,2)
             RC(2,0) RC(2,1) RC(2,2) // if there is no key just delete it
         >;
+    };
+};
+
+&nice_view_spi {
+    status = "okay";
+    nice_view: ls0xx@0 {
+        compatible = "sharp,ls0xx";
+        label = "DISPLAY";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        width = <160>;
+        height = <68>;
     };
 };
 
